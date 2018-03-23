@@ -1,5 +1,15 @@
+
+This code in the first link contains two ways to make this algorithm. One is to use numpy to build this algorithm from bottom up. The other way is to use sklearn directly and to be a "调包侠". The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li".
+
+Two references including code and theory from "知乎":
+
+[Introduction to perceptron,忆臻](https://zhuanlan.zhihu.com/p/25880406)
+
+[Use sklearn to do perceptron, Norlan](https://zhuanlan.zhihu.com/p/27152953)
+
 # 1. Original form algorithm
 
+```markdown
 # input raw data
 import numpy as np
 
@@ -38,7 +48,9 @@ if __name__ == '__main__': # if this file is executed rather than being invoked,
         print("all the data is classified correctly within 1000 iterations")
     else:
         print("Unluckily, after 1000 iterations the data is still not correctly classified")
+```
 
+```markdown
 # 2. Original form algorithm using sklearn
 
 from sklearn.datasets import make_classification
@@ -70,3 +82,4 @@ line_x = np.arange(-4,4)
 line_y = line_x*(-clf.coef_[0][0]/clf.coef_[0][1])-clf.intercept_/clf.coef_[0][1]
 plt.plot(line_x,line_y)
 plt.show()
+```
